@@ -8,7 +8,7 @@ fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Ctether%2Cethe
         console.log(data)
 
         for (let coin of coins) { // boucle for pour afficher chaque coin dans le code HTML 1 par 1 avec condition falling ou rising dans la div principale
-            const coinInfo = data[`${coin}`]
+            const coinInfo = data[`${coin}`];
             const price = coinInfo.usd
             const change = coinInfo.usd_24h_change.toFixed(5);
 
