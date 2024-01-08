@@ -1,11 +1,9 @@
-// https://api.coingecko.com/api/v3/simple/price?
-// ids=bitcoin%2Cetherum%2Ccardano%2Clitecoin%2Cdogecoin%2Ctether&vs_currencies=usd&include_24hr_change=true
+// URL API : https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Cetherum%2Ccardano%2Clitecoin%2Cdogecoin%2Ctether&vs_currencies=usd&include_24hr_change=true
 
 fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Ctether%2Cethereum%2Clitecoin%2Ccardano%2Cdogecoin&vs_currencies=usd&include_24hr_change=true')
     .then(reponse => reponse.json())
     .then(data => {
-        const container = document.querySelector('.container');
-        const coins = Object.getOwnPropertyNames(data); //utilisation de l'objet Object
+        const coins = Object.getOwnPropertyNames(data); //utilisation de l'objet Object pour récupérer les données
         console.log(coins);
         console.log(data)
 
@@ -15,10 +13,11 @@ fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Ctether%2Cethe
             const change = coinInfo.usd_24h_change.toFixed(5);
 
             // ajouter de l'HTML directement dans le javascript avec les données récupérées
+            const container = document.querySelector('.container');
             container.innerHTML += `
             <div class="coin ${change < 0 ? 'falling' : 'rising'}>
                 <div class="coin-logo">
-                        <img src="images/${coin}.png">
+                        <img src="img/${coin}.png">
                 </div>    
                 <div class="coin"><h3>${coin}</h3>
                 </div>
@@ -29,5 +28,4 @@ fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Ctether%2Cethe
             </div>
             `
         }
-
     })

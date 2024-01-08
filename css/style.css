@@ -6,4 +6,13 @@
 
 body {
     font-family: 'Ubuntu', sans-serif;
+    display: flex;
+}
+
+img {
+    height: 3em;
+}
+
+.coin {
+    display: flex;
 }
