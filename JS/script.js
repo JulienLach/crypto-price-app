@@ -15,17 +15,19 @@ fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Ctether%2Cethe
             // ajouter de l'HTML directement dans le javascript avec les données récupérées
             const container = document.querySelector('.container');
             container.innerHTML += `
-            <div class="coin ${change < 0 ? 'falling' : 'rising'}>
+            <div class="coin ${change < 0 ? 'falling' : 'rising'}">
                 <div class="coin-logo">
-                        <img src="img/${coin}.png">
-                </div>    
-                <div class="coin"><h3>${coin}</h3>
+                    <img src="img/${coin}.png">
+                </div>
+                <div class="coin-name">
+                    <h3>${coin}</h3>
+                    <span>/USD</span>
                 </div>
                 <div class="coin-price">
-                <span class="price">$${price}</span>
-                <span class="change">${change}</span>
+                    <span class="price">$${price}</span>
+                    <span class="change">${change}</span>
                 </div>
             </div>
-            `
+            `;
         }
-    })
+    });
