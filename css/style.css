@@ -38,6 +38,11 @@ img {
     padding: 1em;
     background-color: rgb(31, 31, 31);
     border-radius: 0.5em;
+    transition: 0.3s;
+}
+
+.coin:hover {
+    background-color: rgb(58, 58, 58);
 }
 
 .coin .coin-name {
@@ -50,14 +55,22 @@ img {
 
 .coin .coin-name h3 {
     background-color: rgb(31, 31, 31);
-    /* text-transform: uppercase; */
 }
 
 .coin .coin-name span {
     background-color: rgb(31, 31, 31);
 }
 
-.coin-logo {
+.coin-logo,
+img {
     display: flex;
     justify-content: center;
+    background-color: rgb(31, 31, 31);
+
+}
+
+.coin-price,
+.price,
+.change {
+    background-color: rgb(31, 31, 31);
 }
